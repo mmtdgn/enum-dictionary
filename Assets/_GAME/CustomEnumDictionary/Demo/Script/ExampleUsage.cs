@@ -13,7 +13,7 @@ public class ExampleUsage : EnumDictionary.GameobjectVector3Dict
         for (var i = 0; i < EnumLenght(); i++)
         {
             InstantiateObj((States)i);
-            Debug.Log($"{Enum.GetName(typeof(States), (States)i)} Object spawned!");
+            Debug.Log($"{Enum.GetName(typeof(States), (States)i)} => {_T1[i].val1.name} spawned!");
             yield return new WaitForSeconds(1f);
         }
     }

@@ -17,7 +17,7 @@ EnumDictionaryCustom.IStringTransformDict, EnumDictionaryCustom.IDirectionAudioD
 
     void Start()
     {
-        Debug.Log(_T1.GetFirstValue(States.State2));//Returns values by given enum key.
+        Debug.Log(_T1.GetValues(States.State2).Value1);//Returns values by given enum key.
         // Debug.Log(_T1.GetSecondValue(States.State2));
         // Debug.Log(_T1.GetValues(States.State2));
         // Debug.Log(_T1.GetValues(States.State2).Value1);
