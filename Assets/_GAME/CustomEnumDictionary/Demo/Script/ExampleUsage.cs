@@ -1,18 +1,31 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using MD.EnumDictionary;
 using MD.EnumDictionary.Extensions;
 using UnityEngine;
 
-public class ExampleUsage : MonoBehaviour
+public class ExampleUsage : EnumDictionary.GameobjectVector3Dict
 {
-    [Header("Can be referenced from another class")]
-    [SerializeField] protected StringColorEnumDictionary EnumDict;
-
-    void Start()
+    private IEnumerator Start()
     {
-        Debug.Log($"First Argument is : {EnumDict._T1.GetValuesType().Item1} Second Argument is : {EnumDict._T1.GetValuesType().Item2}");
+        Debug.Log($"Objects spawning from dictionary...", this.gameObject);
+        yield return new WaitForSeconds(1f);
+        for (var i = 0; i < EnumLenght(); i++)
+        {
+            InstantiateObj((States)i);
+            Debug.Log($"{Enum.GetName(typeof(States), (States)i)} Object spawned!");
+            yield return new WaitForSeconds(1f);
+        }
     }
-    private Color GetStateColor()
+
+    private void InstantiateObj(States key)
     {
-        return EnumDict._T1.GetSecondValue(States.State1);
+        Instantiate(GetValues(key).GO, GetValues(key).SpawnPoint, Quaternion.identity);
+    }
+
+    private (GameObject GO, Vector3 SpawnPoint) GetValues(States key)
+    {
+        return (_T1.GetFirstValue(key), _T1.GetSecondValue(key));
     }
 }
