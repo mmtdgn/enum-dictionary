@@ -2,7 +2,7 @@
 Custom Enum Dictionary that allow you declare your own dictionary to manage your data.
 
 <b>Reorderable Serialized Enum Dictionary</b><br>
-<img src="/_github/screenshots/I2.png">
+<img src="/.github/screenshots/I2.png">
 
 ## Usage
 1. Only one dictionary usage  
@@ -57,7 +57,7 @@ This is a custom inspector. So for use this inspector, declare your class type a
 
 | 1. Click "Edit Dictionary" button to serialize the dictionary  |  2. Click "Init & Reset" button to Initiliaze the dictionary | 3. Set data and ready to use! |
 |:---:|:---:|:---:|
-| <img src="/_github/screenshots/I0.png">  |  <img src="/_github/screenshots/I1.png"> | <img src="/_github/screenshots/I2.png"> |
+| <img src="/.github/screenshots/I0.png">  |  <img src="/.github/screenshots/I1.png"> | <img src="/.github/screenshots/I2.png"> |
 
 ## Dictionary Auto update
 
@@ -65,7 +65,7 @@ This is a custom inspector. So for use this inspector, declare your class type a
 
 |public enum States { State1, State2, State3, State4 };|public enum States { State1, State2, State3, State4, State5 };|
 |:---:|:---:|
-| <img src="/_github/screenshots/I2.png">  |  <img src="/_github/screenshots/I4.png"> |
+| <img src="/.github/screenshots/I2.png">  |  <img src="/.github/screenshots/I4.png"> |
 
 
 ## Example Usage of Enum Dictionary
@@ -74,7 +74,7 @@ This is a custom inspector. So for use this inspector, declare your class type a
 Gameobject value is prefab.  
 Vector3 value is spawn position.
 
-<img src="/_github/screenshots/ExampleUsage.png"/>
+<img src="/.github/screenshots/ExampleUsage.png"/>
 
 ### Code
 
@@ -105,14 +105,14 @@ public class ExampleUsage : EnumDictionary.GameobjectVector3Dict
 }
 ```
 ### Output
-<img src="/_github/screenshots/ExampleEditor.png">
+<img src="/.github/screenshots/ExampleEditor.png">
 
 ## Interface Implementation
 
 ### if more than one dictionaries are needed, the interface implementation should be used
 This tool has a handicap for interfaces. `ReOrder()` extension must be called manually in `OnValidate()` for auto serialization based on enum length
 
-<img src="/_github/screenshots/Interface.png"/>
+<img src="/.github/screenshots/Interface.png"/>
 
 ```c
 public class ExampleImplementation : EnumDictionary.StringIntDict, EnumDictionaryCustom.IStringColorDict,
