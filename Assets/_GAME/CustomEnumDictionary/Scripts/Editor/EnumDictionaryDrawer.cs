@@ -16,15 +16,12 @@ using MD.EnumDictionary;
 [CustomPropertyDrawer(typeof(EnumDictionaryBase<Direction, GameObject, Vector3>))]
 [CustomPropertyDrawer(typeof(EnumDictionaryBase<Direction, string, Animation>))]
 
-
 public class EnumDictionaryDrawer : PropertyDrawer
 {
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
     {
-        var oldColor = GUI.backgroundColor;
         GUI.backgroundColor = new Color(1f, 0.8f, 0.7f);
         GUI.contentColor = new Color(0.82f, 0.73f, 0.60f);
-        GUI.color = Color.white;
 
         EditorGUI.BeginProperty(position, label, property);
 
@@ -38,7 +35,7 @@ public class EnumDictionaryDrawer : PropertyDrawer
         var RectRight = new Rect(260, position.y, position.max.x - 260, position.height);
 
 
-        if (property.FindPropertyRelative("IsStaticKey").boolValue)
+        if (property.FindPropertyRelative("IsEnumFieldEditable").boolValue)
         {
             SerializedProperty keyValue = property.FindPropertyRelative("key");
             EditorGUI.LabelField(RectLeft, keyValue.enumDisplayNames[keyValue.enumValueIndex], EditorStyles.objectFieldThumb);
@@ -49,8 +46,8 @@ public class EnumDictionaryDrawer : PropertyDrawer
             property.FindPropertyRelative("key"), GUIContent.none);
         }
 
-        EditorGUI.PropertyField(RectMiddle,
-        property.FindPropertyRelative("val1"), GUIContent.none);
+        SerializedProperty val1 = property.FindPropertyRelative("val1");
+        EditorGUI.PropertyField(RectMiddle, val1, GUIContent.none);
 
         SerializedProperty val2 = property.FindPropertyRelative("val2");
         EditorGUI.PropertyField(RectRight, val2, GUIContent.none);

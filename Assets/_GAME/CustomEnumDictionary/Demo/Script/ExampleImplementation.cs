@@ -1,10 +1,10 @@
-using System.Collections;
 using System.Collections.Generic;
 using MD.EnumDictionary;
 using MD.EnumDictionary.Extensions;
 using UnityEngine;
 
-public class ExampleImplementation : EnumDictionary.StringIntDict, EnumDictionaryCustom.IStringColorDict, EnumDictionaryCustom.IStringTransformDict, EnumDictionaryCustom.IDirectionAudioDict
+public class ExampleImplementation : EnumDictionary.StringIntDict, EnumDictionaryCustom.IStringColorDict,
+EnumDictionaryCustom.IStringTransformDict, EnumDictionaryCustom.IDirectionAudioDict
 {
     [SerializeField] protected List<EnumDictionaryBase<States, string, Color>> m_ESC_D;
     public List<EnumDictionaryBase<States, string, Color>> ESC_D => m_ESC_D;
@@ -18,12 +18,16 @@ public class ExampleImplementation : EnumDictionary.StringIntDict, EnumDictionar
     void Start()
     {
         Debug.Log(_T1.GetFirstValue(States.State2));//Returns values by given enum key.
+        // Debug.Log(_T1.GetSecondValue(States.State2));
+        // Debug.Log(_T1.GetValues(States.State2));
+        // Debug.Log(_T1.GetValues(States.State2).Value1);
+        // Debug.Log(_T1.GetValues(States.State2).Value2);
     }
 
-    //Required for automatic serialization based on enum length.
+    //Required for auto serialization based on enum length.
     public override void OnValidate()
     {
-        //The list should update whenever you add a new item to the dictionary.(not required if only abstract class is used.)
+        //The Dictionary updates whenever you add a new item to the dictionary.(not required if only abstract class is used.)
         base.OnValidate();
         //for interfaces
         m_ESC_D.ReOrder();

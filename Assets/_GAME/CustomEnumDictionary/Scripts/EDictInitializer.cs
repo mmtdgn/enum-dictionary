@@ -46,7 +46,7 @@ namespace MD.EnumDictionary
         private void SetterUp(int index)
         {
             _T1[index].key = (T)(object)index;
-            _T1[index].IsStaticKey = true;
+            _T1[index].IsEnumFieldEditable = true;
             _T1[index].name = " ";//Clear Element index name/ (R&D: `String.Empty` Not working?)
         }
 

@@ -1,7 +1,3 @@
-/*
-    Written By Mehmet Doğan 2022
-    
-*/
 using MD.EnumDictionary;
 using MD.EnumDictionary.Extensions;
 using UnityEngine;
