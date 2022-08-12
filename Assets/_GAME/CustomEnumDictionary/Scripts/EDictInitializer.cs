@@ -1,3 +1,7 @@
+/*
+ * Written by Mehmet Doğan <mmt.dgn.6634@gmail.com>, July 2022
+ *
+*/
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,11 +16,18 @@ namespace MD.EnumDictionary
 
         public List<EnumDictionaryBase<T, T1, T2>> _T1;
 
+        /// <summary>
+        /// Base class method for enum dictionary<br></br><br></br>
+        /// <b>Returns</b> Enum length
+        /// </summary>
         public int EnumLenght()
         {
             return System.Enum.GetNames(typeof(T)).Length;
         }
 
+        /// <summary>
+        /// Generate empty dictionary by enum length<br></br><br></br>
+        /// </summary>
         public void ReOrder()
         {
             _T1.Clear();
@@ -28,6 +39,9 @@ namespace MD.EnumDictionary
             }
         }
 
+        /// <summary>
+        /// Checks enum lenghts and updates<br></br><br></br>
+        /// </summary>
         public void DictionaryLenghtCheck()
         {
             while (_T1.Count != EnumLenght())
@@ -43,6 +57,9 @@ namespace MD.EnumDictionary
             }
         }
 
+        /// <summary>
+        /// Set default dictionary values<br></br><br></br>
+        /// </summary>
         private void SetterUp(int index)
         {
             _T1[index].key = (T)(object)index;
@@ -50,6 +67,9 @@ namespace MD.EnumDictionary
             _T1[index].name = " ";//Clear Element index name/ (R&D: `String.Empty` Not working?)
         }
 
+        /// <summary>
+        /// Set default dictionary values<br></br><br></br>
+        /// </summary>
         public virtual void OnValidate()
         {
             if (EnumLenght() == 0)
