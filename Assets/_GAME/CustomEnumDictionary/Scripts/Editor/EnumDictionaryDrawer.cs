@@ -19,6 +19,8 @@ using MD.EnumDictionary;
 [CustomPropertyDrawer(typeof(EnumDictionaryBase<Direction, GameObject, Vector3>))]
 [CustomPropertyDrawer(typeof(EnumDictionaryBase<Direction, string, Animation>))]
 
+//Add new attribute what you need it!
+
 public class EnumDictionaryDrawer : PropertyDrawer
 {
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
@@ -38,7 +40,7 @@ public class EnumDictionaryDrawer : PropertyDrawer
         var RectRight = new Rect(260, position.y, position.max.x - 260, position.height);
 
 
-        if (property.FindPropertyRelative("IsEnumFieldEditable").boolValue)
+        if (property.FindPropertyRelative("IsEnumFieldEditable").boolValue)//For label field
         {
             SerializedProperty keyValue = property.FindPropertyRelative("key");
             EditorGUI.LabelField(RectLeft, keyValue.enumDisplayNames[keyValue.enumValueIndex], EditorStyles.objectFieldThumb);

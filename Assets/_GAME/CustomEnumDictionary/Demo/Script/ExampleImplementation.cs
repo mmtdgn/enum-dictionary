@@ -30,8 +30,8 @@ EnumDictionaryCustom.IStringTransformDict, EnumDictionaryCustom.IDirectionAudioD
         //The Dictionary updates whenever you add a new item to the dictionary.(not required if only abstract class is used.)
         base.OnValidate();
         //for interfaces
-        m_ESC_D.ReOrder();
-        m_EST_D.ReOrder();
-        EEA_D.ReOrder();
+        m_ESC_D.Reorder();
+        m_EST_D.Reorder();
+        EEA_D.Reorder();
     }
 }

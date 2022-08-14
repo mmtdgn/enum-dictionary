@@ -52,8 +52,7 @@ namespace MD.EnumDictionary.Extensions
         /// <summary>
         /// Reorder and serialize enum dictionary by enum length <br></br><br></br>
         /// </summary>
-        /// <param name="Value">Second value</param>
-        public static void ReOrder<T, T1, T2>(this List<EnumDictionaryBase<T, T1, T2>> _T1) where T : Enum
+        public static void Reorder<T, T1, T2>(this List<EnumDictionaryBase<T, T1, T2>> _T1) where T : Enum
         {
             int EnumLenght()
             {
