@@ -7,7 +7,7 @@ Custom Enum Dictionary that allow you declare your own dictionary to manage your
 ## Usage
 1. Only one dictionary usage  
   a. Define your own enum  
-  b. Inherit any Dictionary class from under `Enum Dictionary` class into your own class. 
+  b. Inherit any Dictionary class from under `Enum Dictionary` class into your own class.  
   c. Or define your Dictionary, Create an `abstract class` and inherit by `EDictInitiliazer` class and declare your value types.(Look at examples)  
   d. Inherit this base class to any desired class. Dictionary defined and serialized by base class. (it is also derived from monobehaviour) 
   e. Set your data from Inspector and it's ready to use.   
