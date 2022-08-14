@@ -7,9 +7,10 @@ Custom Enum Dictionary that allow you declare your own dictionary to manage your
 ## Usage
 1. Only one dictionary usage  
   a. Define your own enum  
-  b. Create an `abstract class` and inherit by `EDictInitiliazer` class and declare your value types.(Look at examples)  
-  c. Inherit this base class to any desired class. Dictionary defined and serialized by base class. (it is also derived from monobehaviour)  
-  d. Set your data from Inspector and it's ready to use.  
+  b. Inherit any Dictionary class from under `Enum Dictionary` class into your own class. 
+  c. Or define your Dictionary, Create an `abstract class` and inherit by `EDictInitiliazer` class and declare your value types.(Look at examples)  
+  d. Inherit this base class to any desired class. Dictionary defined and serialized by base class. (it is also derived from monobehaviour) 
+  e. Set your data from Inspector and it's ready to use.   
 2. Multi-Conditional usage  
   a. Define your own enum  
   b. Create an `Interface` and define `EnumDictionaryBase` list property  
@@ -38,17 +39,20 @@ Custom Enum Dictionary that allow you declare your own dictionary to manage your
 | DictionaryLenghtCheck() | Called by `OnValidate()`automatically. Checks enum length and updates it|
 | ReOrder()               | Initializer and reorderer for dictionary  |
 
+```C
+public abstract class StringColorDict : EDictInitializer<States, string, Color> { }
+```
 
 ## Enum Dictionary Extensions
 | Extension                  | Returns        | Args                   |Description                                          |
 | -------------------------- | -------------- | ------ |-------------------------------------------------------------------- |
 | GetValuesType<T, T1, T2>   | `T1` , `T2`    | `T`    | Returns first and second values types |
-| GetValuesType<T, T1, T2>   | `T1` , `T2`    | `T`    | Returns first and second values |
+| GetValues<T, T1, T2>       | `T1` , `T2`    | `T`    | Returns first and second values |
 | GetFirstValue<T, T1, T2>   | `T1`           | `T`    | Returns first value with given enum key    |
 | GetSecondValue<T, T1, T2>  | `T2`           | `T`    | Returns second value with given enum key   |
 | SetFirstValue<T, T1, T2>   |                | `T` , `T1`  | Set first value with given enum key   |
 | SetSecondValue<T, T1, T2>  |                | `T` , `T2`  | Set second value with given enum key   |
-| ReOrder<T, T1, T2>         |                |        | Update dictionary. Called by `OnValidate()`|
+| Reorder<T, T1, T2>         |                |        | Update dictionary. Called by `OnValidate()`|
 
 ## Initiliaze Reorderable List
 
@@ -110,7 +114,7 @@ public class ExampleUsage : EnumDictionary.GameobjectVector3Dict
 ## Interface Implementation
 
 ### if more than one dictionaries are needed, the interface implementation should be used
-This tool has a handicap for interfaces. `ReOrder()` extension must be called manually in `OnValidate()` for auto serialization based on enum length
+This tool has a handicap for interfaces. `Reorder()` extension must be called manually in `OnValidate()` for auto serialization based on enum length
 
 <img src="/.github/screenshots/Interface.png"/>
 
