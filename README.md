@@ -1,27 +1,34 @@
 # Custom Enum Dictionary
 Custom Enum Dictionary that allow you declare your own dictionary to manage your data.
 
+## Explanation
+This is the Generic Class list containing the Enum key and its values. It's serializable and provides a better UX to manage data. 
+Returns values with the given enum key. So, it works similarly to Dictionary and I call it `custom enum dictionary`.
+
+## Benefits
+- Serializable dictionary  
+- No need to cast to integers with this tool. We can store integer data with enum-dictionary. It also allows different enum keys to be equal to the same integer value. (normally C# not allows that)  
+- There are 2 return value types. can be increased  
+- Dictionary length updates itself by enum length. 'Add' and 'Remove' are not allowed. Each enum value is automatically serialized  
+
 <b>Reorderable Serialized Enum Dictionary</b><br>
 <img src="/.github/screenshots/I2.png">
 
 ## Usage
 1. Only one dictionary usage  
   a. Define your own enum  
-  b. Inherit any Dictionary class from under `Enum Dictionary` class into your own class.  
-  c. Or define your Dictionary, Create an `abstract class` and inherit by `EDictInitiliazer` class and declare your value types.(Look at examples)  
-  d. Inherit this base class to any desired class. Dictionary defined and serialized by base class. (it is also derived from monobehaviour) 
+  b. Inherit from the 'EnumDictionary' abstract class into your own class by declaring Dictionary value types. (look at examples)  
   e. Set your data from Inspector and it's ready to use.   
 2. Multi-Conditional usage  
   a. Define your own enum  
   b. Create an `Interface` and define `EnumDictionaryBase` list property  
-  c. Implement any other class. For auto serialization by enum length. Call `RecOrder()` extension at `OnValidate()`  
+  c. Implement it to your own class. For auto serialization by enum length, Call `ReOrder()` extension at `OnValidate()`  
   d. Set your data from Inspector and it's ready to use  
   
 3. (!) If add a new state to your enum, its updates itself by enum length  
   
 ### Beware! 
   Enum integer values must be default (0,1,2....)  
-  No need for integer casting with this tool. Declare your one of values as integer also different enum keys can equal the same integer(and other types) dictionary value  
 
 ## Enum Dictionary Base Variables
 | Name            | Description                                          |
@@ -56,7 +63,7 @@ public abstract class StringColorDict : EDictInitializer<States, string, Color> 
 
 ## Initiliaze Reorderable List
 
-This is a custom inspector. So for use this inspector, declare your class type at `CustomEditor` attribute(Look at example).
+This is a custom inspector. So for use this inspector, declare your class at `CustomEditor` attribute(Look at example).
 ### Usage
 
 | 1. Click "Edit Dictionary" button to serialize the dictionary  |  2. Click "Init & Reset" button to Initiliaze the dictionary | 3. Set data and ready to use! |
