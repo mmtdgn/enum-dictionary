@@ -8,7 +8,7 @@ Returns values with the given enum key. So, it works similarly to Dictionary and
 ## Benefits
 - Serializable dictionary  
 - No need to cast to integers with this tool. We can store integer data with enum-dictionary. It also allows different enum keys to be equal to the same integer value. (normally C# not allows that)  
-- There are 2 return value types. can be increased  
+- There are 2 return value types. Can be increased  
 - Dictionary length updates itself by enum length. 'Add' and 'Remove' are not allowed. Each enum value is automatically serialized  
 
 <b>Reorderable Serialized Enum Dictionary</b><br>
