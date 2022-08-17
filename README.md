@@ -22,8 +22,6 @@ Returns values with the given enum key. So, it works similarly to Dictionary and
   2. Inherit from the 'EnumDictionary' abstract class into your own class by declaring Dictionary value types. (look at examples)  
   3. Set your data from Inspector and it's ready to use.   
   
-* (!) If add a new state to your enum, its updates itself by enum length  
-  
 ### Beware! 
 * Enum integer values must be default (0,1,2....)  
 
