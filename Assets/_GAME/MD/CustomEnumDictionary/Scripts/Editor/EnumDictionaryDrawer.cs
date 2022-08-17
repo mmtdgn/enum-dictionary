@@ -5,20 +5,12 @@ using UnityEngine;
 using UnityEditor;
 using MD.EnumDictionary;
 
+[CustomPropertyDrawer(typeof(EnumDictionaryBase<States, GameObject, Vector3>))]
+
 [CustomPropertyDrawer(typeof(EnumDictionaryBase<States, string, Color>))]
-[CustomPropertyDrawer(typeof(EnumDictionaryBase<States, string, float>))]
 [CustomPropertyDrawer(typeof(EnumDictionaryBase<States, string, int>))]
 [CustomPropertyDrawer(typeof(EnumDictionaryBase<States, string, Transform>))]
-[CustomPropertyDrawer(typeof(EnumDictionaryBase<States, string, GameObject>))]
-[CustomPropertyDrawer(typeof(EnumDictionaryBase<States, string, Animation>))]
-[CustomPropertyDrawer(typeof(EnumDictionaryBase<States, GameObject, Vector3>))]
-[CustomPropertyDrawer(typeof(EnumDictionaryBase<States, Object, Direction>))]
 [CustomPropertyDrawer(typeof(EnumDictionaryBase<States, Direction, AudioClip>))]
-
-[CustomPropertyDrawer(typeof(EnumDictionaryBase<Direction, GameObject, Animation>))]
-[CustomPropertyDrawer(typeof(EnumDictionaryBase<Direction, GameObject, Vector3>))]
-[CustomPropertyDrawer(typeof(EnumDictionaryBase<Direction, string, Animation>))]
-
 //Add new attribute what you need it!
 
 public class EnumDictionaryDrawer : PropertyDrawer

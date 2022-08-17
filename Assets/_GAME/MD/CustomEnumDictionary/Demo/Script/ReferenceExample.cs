@@ -1,10 +1,8 @@
-using MD.EnumDictionary;
-using MD.EnumDictionary.Extensions;
 using UnityEngine;
 
 public class ReferenceExample : MonoBehaviour
 {
-    [Header("Can be referenced from another class")]
+    [Header("The dictionary can be referenced from another class")]
     [SerializeField] protected StringColorEnumDictionary m_EnumDictionary;
     [SerializeField] Color m_Color;
     [SerializeField] string m_String;

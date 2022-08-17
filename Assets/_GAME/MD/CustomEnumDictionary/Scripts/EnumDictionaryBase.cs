@@ -4,6 +4,9 @@
 */
 using System;
 
+public enum States { State1, State2, State3, State4, State5 };
+public enum Direction { Backward, Forward, Right, Left, Up, Down };
+
 namespace MD.EnumDictionary
 {
     [Serializable]

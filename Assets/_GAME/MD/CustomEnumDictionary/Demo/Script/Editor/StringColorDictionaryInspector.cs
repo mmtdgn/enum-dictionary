@@ -5,8 +5,7 @@ using UnityEditorInternal;
 namespace MD.EnumDictionary
 {
     [CustomEditor(typeof(StringColorEnumDictionary))]
-    //[CustomEditor(typeof(StringIntEnumDict))]
-    public class EDictCustomInspector : Editor
+    public class StringColorDictionaryInspector : Editor
     {
         private bool m_ShowListSpace;
         private SerializedProperty m_Property;
@@ -14,7 +13,7 @@ namespace MD.EnumDictionary
 
         private void OnEnable()
         {
-            m_Property = serializedObject.FindProperty("_T1");
+            m_Property = serializedObject.FindProperty("D1");
             m_List = new ReorderableList(serializedObject, m_Property, true, true, false, false)
             {
                 drawHeaderCallback = DrawListHeader,
@@ -63,6 +62,7 @@ namespace MD.EnumDictionary
         public void ReorderList()
         {
             StringColorEnumDictionary _base = target as StringColorEnumDictionary;
+
             if (GUILayout.Button("Init & Reset", GUILayout.Height(30)))
             {
                 if (EditorUtility.DisplayDialog("Reload Enum Dictionary", "Are you sure you want to reset enum dictionary?\n\n All data will be gone!", "Yes", "No"))

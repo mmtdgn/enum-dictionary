@@ -123,154 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &619226799
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 619226803}
-  - component: {fileID: 619226804}
-  m_Layer: 0
-  m_Name: E-Dictionary(Interface)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &619226803
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 619226799}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &619226804
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 619226799}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4e6731837db5ba45b138e5340e53835, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _T1:
-  - name: ' '
-    key: 0
-    val1: 
-    val2: 0
-    IsStaticKey: 1
-  - name: ' '
-    key: 1
-    val1: 
-    val2: 0
-    IsStaticKey: 1
-  - name: ' '
-    key: 2
-    val1: 
-    val2: 56
-    IsStaticKey: 1
-  - name: ' '
-    key: 3
-    val1: 
-    val2: 5
-    IsStaticKey: 1
-  - name: ' '
-    key: 4
-    val1: 
-    val2: 0
-    IsStaticKey: 1
-  m_ESC_D:
-  - name: ' '
-    key: 0
-    val1: color1
-    val2: {r: 0.8962264, g: 0.8318386, b: 0.75671947, a: 1}
-    IsStaticKey: 1
-  - name: ' '
-    key: 1
-    val1: color2
-    val2: {r: 0.8773585, g: 0.7278622, b: 0.55869526, a: 1}
-    IsStaticKey: 1
-  - name: ' '
-    key: 2
-    val1: color3
-    val2: {r: 0.8490566, g: 0.6405008, b: 0.40450338, a: 1}
-    IsStaticKey: 1
-  - name: ' '
-    key: 3
-    val1: color4
-    val2: {r: 0.9150943, g: 0.57286656, b: 0.18560876, a: 1}
-    IsStaticKey: 1
-  - name: ' '
-    key: 4
-    val1: color1
-    val2: {r: 0.8962264, g: 0.8318386, b: 0.75671947, a: 1}
-    IsStaticKey: 1
-  m_EST_D:
-  - name: ' '
-    key: 0
-    val1: aa
-    val2: {fileID: 2026021267}
-    IsStaticKey: 1
-  - name: ' '
-    key: 1
-    val1: bb
-    val2: {fileID: 1156210113}
-    IsStaticKey: 1
-  - name: ' '
-    key: 2
-    val1: cc
-    val2: {fileID: 2026021267}
-    IsStaticKey: 1
-  - name: ' '
-    key: 3
-    val1: dd
-    val2: {fileID: 1156210113}
-    IsStaticKey: 1
-  - name: ' '
-    key: 4
-    val1: aa
-    val2: {fileID: 2026021267}
-    IsStaticKey: 1
-  m_EEA_D:
-  - name: ' '
-    key: 0
-    val1: 0
-    val2: {fileID: 0}
-    IsStaticKey: 1
-  - name: ' '
-    key: 1
-    val1: 1
-    val2: {fileID: 0}
-    IsStaticKey: 1
-  - name: ' '
-    key: 2
-    val1: 2
-    val2: {fileID: 0}
-    IsStaticKey: 1
-  - name: ' '
-    key: 3
-    val1: 3
-    val2: {fileID: 0}
-    IsStaticKey: 1
-  - name: ' '
-    key: 4
-    val1: 0
-    val2: {fileID: 0}
-    IsStaticKey: 1
 --- !u!1 &979007593
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 979007595}
   - component: {fileID: 979007601}
+  - component: {fileID: 979007602}
   m_Layer: 0
   m_Name: E-DictionaryReorderable
   m_TagString: Untagged
@@ -315,73 +168,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f53205b145c3314a8ff48c31d7a3bbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _T1:
+  D1:
   - name: ' '
     key: 0
-    val1: One
-    val2: {r: 0.4784314, g: 0.26666668, b: 0.10196079, a: 1}
-    IsStaticKey: 1
+    val1: one
+    val2: {r: 0.25490198, g: 0.4265973, b: 0.6901961, a: 1}
+    IsEnumFieldEditable: 1
   - name: ' '
     key: 1
-    val1: Two
-    val2: {r: 0.5647059, g: 0.52156866, b: 0.6156863, a: 1}
-    IsStaticKey: 1
+    val1: two
+    val2: {r: 0.6901961, g: 0.48069242, b: 0.25490198, a: 1}
+    IsEnumFieldEditable: 1
   - name: ' '
     key: 2
-    val1: Three
-    val2: {r: 0.7568628, g: 0.70980394, b: 0.8078432, a: 1}
-    IsStaticKey: 1
+    val1: three
+    val2: {r: 0.6901961, g: 0.25490198, b: 0.25490198, a: 1}
+    IsEnumFieldEditable: 1
   - name: ' '
     key: 3
-    val1: Four
-    val2: {r: 0.2509804, g: 0.2392157, b: 0.27058825, a: 1}
-    IsStaticKey: 1
+    val1: four
+    val2: {r: 0.26851404, g: 0.6901961, b: 0.25490198, a: 1}
+    IsEnumFieldEditable: 1
   - name: ' '
     key: 4
-    val1: Five
-    val2: {r: 0.5849056, g: 0.45523316, b: 0.45523316, a: 1}
-    IsStaticKey: 1
---- !u!1 &996478470
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 996478471}
-  - component: {fileID: 996478472}
-  - component: {fileID: 996478473}
-  - component: {fileID: 996478474}
-  m_Layer: 0
-  m_Name: SomeOtherClass
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &996478471
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 996478470}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &996478472
+    val1: five
+    val2: {r: 0.25490198, g: 0.6901961, b: 0.57507133, a: 1}
+    IsEnumFieldEditable: 1
+--- !u!114 &979007602
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 996478470}
+  m_GameObject: {fileID: 979007593}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd21fcc059a183f47b49665be2d1a00d, type: 3}
@@ -390,87 +209,6 @@ MonoBehaviour:
   m_EnumDictionary: {fileID: 979007601}
   m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_String: 
---- !u!114 &996478473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 996478470}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3380d23de5773b040b11859b7e6c3f84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _T1:
-  - name: ' '
-    key: 0
-    val1: S
-    val2: {fileID: 3253955806569911883, guid: 88ec6ffedeb1d40409674525933c040c, type: 3}
-    IsStaticKey: 1
-  - name: ' '
-    key: 1
-    val1: W
-    val2: {fileID: 4024544464198948734, guid: b27a92272a585774bafd77edb73e3889, type: 3}
-    IsStaticKey: 1
-  - name: ' '
-    key: 2
-    val1: D
-    val2: {fileID: 9155123166757170406, guid: 280508158c3980e4ab4d84281e9ea361, type: 3}
-    IsStaticKey: 1
-  - name: ' '
-    key: 3
-    val1: A
-    val2: {fileID: 9155123166757170406, guid: 280508158c3980e4ab4d84281e9ea361, type: 3}
-    IsStaticKey: 1
-  - name: ' '
-    key: 4
-    val1: Space
-    val2: {fileID: 5422761021496876752, guid: 202265598353b8148890c67a2c00084b, type: 3}
-    IsStaticKey: 1
-  - name: ' '
-    key: 5
-    val1: Ctrl
-    val2: {fileID: 7256721776566564862, guid: c7854fe0078fe7e419eeaa43c7c15a37, type: 3}
-    IsStaticKey: 1
---- !u!114 &996478474
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 996478470}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: caf9de86d5c1986439547c02ec25d3bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _T1:
-  - name: ' '
-    key: 0
-    val1: {fileID: 7400000, guid: c81d756f65a17014a8d765ea9f5257f9, type: 2}
-    val2: 0
-    IsStaticKey: 1
-  - name: ' '
-    key: 1
-    val1: {fileID: 102900000, guid: 47808ddd90eeff44db936bc1613d7ffb, type: 3}
-    val2: 0
-    IsStaticKey: 1
-  - name: ' '
-    key: 2
-    val1: {fileID: 6478386367410677705, guid: dd872aca4c263bb4a8fd9c49cd8c3133, type: 3}
-    val2: 0
-    IsStaticKey: 1
-  - name: ' '
-    key: 3
-    val1: {fileID: 2026021264}
-    val2: 0
-    IsStaticKey: 1
-  - name: ' '
-    key: 4
-    val1: {fileID: 11500000, guid: 2cb1c6a54e84ca8469efc72527163bba, type: 3}
-    val2: 0
-    IsStaticKey: 1
 --- !u!1 &1156210111
 GameObject:
   m_ObjectHideFlags: 0
@@ -594,32 +332,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f77913c505d20a840b04f770c8747af5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _T1:
+  D1:
   - name: ' '
     key: 0
     val1: {fileID: 6478386367410677705, guid: dd872aca4c263bb4a8fd9c49cd8c3133, type: 3}
     val2: {x: 5, y: 5, z: 5}
-    IsStaticKey: 1
+    IsEnumFieldEditable: 1
   - name: ' '
     key: 1
     val1: {fileID: 636117714852987250, guid: b6734281ba21fc44faee655748fe9807, type: 3}
     val2: {x: 2.5, y: 2.5, z: 2.5}
-    IsStaticKey: 1
+    IsEnumFieldEditable: 1
   - name: ' '
     key: 2
     val1: {fileID: 6910742092008201046, guid: 8a4fae6d996ed504eb65e17c459ad498, type: 3}
     val2: {x: 0, y: 3, z: 0}
-    IsStaticKey: 1
+    IsEnumFieldEditable: 1
   - name: ' '
     key: 3
     val1: {fileID: 4853237696771298465, guid: a69733665a85c7e4d888526e3d4e8121, type: 3}
     val2: {x: 100, y: -50, z: 100}
-    IsStaticKey: 1
+    IsEnumFieldEditable: 1
   - name: ' '
     key: 4
     val1: {fileID: 4853237696771298465, guid: be9cb6329f8e3ff4bbb78223efc2a873, type: 3}
     val2: {x: 0, y: -5, z: 10}
-    IsStaticKey: 1
+    IsEnumFieldEditable: 1
 --- !u!4 &1736951739
 Transform:
   m_ObjectHideFlags: 0
@@ -633,7 +371,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2026021264
 GameObject:

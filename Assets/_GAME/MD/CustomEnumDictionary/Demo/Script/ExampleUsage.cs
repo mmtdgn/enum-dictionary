@@ -1,10 +1,9 @@
 using System;
 using System.Collections;
 using MD.EnumDictionary;
-using MD.EnumDictionary.Extensions;
 using UnityEngine;
 
-public class ExampleUsage : EnumDictionary.GameobjectVector3Dict
+public class ExampleUsage : EnumDictionary<States, GameObject, Vector3>
 {
     private IEnumerator Start()
     {
@@ -13,18 +12,18 @@ public class ExampleUsage : EnumDictionary.GameobjectVector3Dict
         for (var i = 0; i < EnumLenght(); i++)
         {
             InstantiateObj((States)i);
-            Debug.Log($"{Enum.GetName(typeof(States), (States)i)} => {_T1[i].val1.name} spawned!");
+            Debug.Log($"{Enum.GetName(typeof(States), (States)i)} => {GetValues(i).FirstValue.name} spawned!");
             yield return new WaitForSeconds(1f);
         }
     }
 
     private void InstantiateObj(States key)
     {
-        Instantiate(GetValues(key).GO, GetValues(key).SpawnPoint, Quaternion.identity);
+        Instantiate(GetDictionaryValues(key).GO, GetDictionaryValues(key).SpawnPoint, Quaternion.identity);
     }
 
-    private (GameObject GO, Vector3 SpawnPoint) GetValues(States key)
+    private (GameObject GO, Vector3 SpawnPoint) GetDictionaryValues(States key)
     {
-        return (_T1.GetFirstValue(key), _T1.GetSecondValue(key));
+        return (GetValues(key).FirstValue, GetValues(key).SecondValue);
     }
 }
