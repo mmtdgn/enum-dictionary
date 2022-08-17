@@ -12,23 +12,20 @@ Returns values with the given enum key. So, it works similarly to Dictionary and
 - Dictionary length updates itself by enum length. 'Add' and 'Remove' are not allowed. Each enum value is automatically serialized  
 
 <b>Reorderable Serialized Enum Dictionary</b><br>
-<img src="/.github/screenshots/I2.png">
+
+|Example 1| Example 2|
+|---|---|
+|<img src="/.github/screenshots/I2.png">|<img src="/.github/screenshots/ExampleUsage.png"/>|
 
 ## Usage
-1. Only one dictionary usage  
-  a. Define your own enum  
-  b. Inherit from the 'EnumDictionary' abstract class into your own class by declaring Dictionary value types. (look at examples)  
-  e. Set your data from Inspector and it's ready to use.   
-2. Multi-Conditional usage  
-  a. Define your own enum  
-  b. Create an `Interface` and define `EnumDictionaryBase` list property  
-  c. Implement it to your own class. For auto serialization by enum length, Call `ReOrder()` extension at `OnValidate()`  
-  d. Set your data from Inspector and it's ready to use  
+  1. Define your own enum  
+  2. Inherit from the 'EnumDictionary' abstract class into your own class by declaring Dictionary value types. (look at examples)  
+  3. Set your data from Inspector and it's ready to use.   
   
-3. (!) If add a new state to your enum, its updates itself by enum length  
+* (!) If add a new state to your enum, its updates itself by enum length  
   
 ### Beware! 
-  Enum integer values must be default (0,1,2....)  
+* Enum integer values must be default (0,1,2....)  
 
 ## Enum Dictionary Base Variables
 | Name            | Description                                          |
@@ -38,16 +35,19 @@ Returns values with the given enum key. So, it works similarly to Dictionary and
 | val1            | (Generic Type Parameter) First Dictionary value      |
 | val2            | (Generic Type Parameter) Second Dictionary value     |
 
-## Enum Dictionary Initializer
-### Methods
-| Name                    |  Description                              |
-| ----------------------- | ----------------------------------------- |
-| EnumLenght()            | Returns given `T` type enum's lenght      |
+## Enum Dictionary
+| Name                    |  Description                                |
+| ----------------------- | ------------------------------------------- | 
+| EnumLenght()            | Returns given `T` type enum's lenght        |
 | DictionaryLenghtCheck() | Called by `OnValidate()`automatically. Checks enum length and updates it|
-| ReOrder()               | Initializer and reorderer for dictionary  |
+| GetValues(T)            | Returns dictionary values by given enum key |
+| SetValues(T , T1)       | Set first dictionary value                  |
+| SetValues(T , T2)       | Set second dictionary values                |
+| ReOrder()               | Initializer and reorderer for dictionary    |
+| D1                      | Custom Dictionary field                     |
 
 ```C
-public abstract class StringColorDict : EDictInitializer<States, string, Color> { }
+public class ExampleUsage : EnumDictionary<States, GameObject, Vector3> { }
 ```
 
 ## Enum Dictionary Extensions
@@ -78,6 +78,7 @@ This is a custom inspector. So for use this inspector, declare your class at `Cu
 |:---:|:---:|
 | <img src="/.github/screenshots/I2.png">  |  <img src="/.github/screenshots/I4.png"> |
 
+-------------------------------------------------------------------------------------------------------------------
 
 ## Example Usage of Enum Dictionary
 
@@ -85,12 +86,14 @@ This is a custom inspector. So for use this inspector, declare your class at `Cu
 Gameobject value is prefab.  
 Vector3 value is spawn position.
 
-<img src="/.github/screenshots/ExampleUsage.png"/>
+|Inspector|
+|---|
+|<img src="/.github/screenshots/ExampleUsage.png"/>|
 
 ### Code
 
 ```c
-public class ExampleUsage : EnumDictionary.GameobjectVector3Dict
+public class ExampleUsage : EnumDictionary<States, GameObject, Vector3>
 {
     private IEnumerator Start()
     {
@@ -99,57 +102,23 @@ public class ExampleUsage : EnumDictionary.GameobjectVector3Dict
         for (var i = 0; i < EnumLenght(); i++)
         {
             InstantiateObj((States)i);
-            Debug.Log($"{Enum.GetName(typeof(States), (States)i)} Object spawned!");
+            Debug.Log($"{Enum.GetName(typeof(States), (States)i)} => {GetValues(i).FirstValue.name} spawned!");
             yield return new WaitForSeconds(1f);
         }
     }
 
     private void InstantiateObj(States key)
     {
-        Instantiate(GetValues(key).GO, GetValues(key).SpawnPoint, Quaternion.identity);
+        Instantiate(GetDictionaryValues(key).GO, GetDictionaryValues(key).SpawnPoint, Quaternion.identity);
     }
 
-    private (GameObject GO, Vector3 SpawnPoint) GetValues(States key)
+    private (GameObject GO, Vector3 SpawnPoint) GetDictionaryValues(States key)
     {
-        return (_T1.GetFirstValue(key), _T1.GetSecondValue(key));
+        return (GetValues(key).FirstValue, GetValues(key).SecondValue);
     }
 }
 ```
-### Output
-<img src="/.github/screenshots/ExampleEditor.png">
-
-## Interface Implementation
-
-### if more than one dictionaries are needed, the interface implementation should be used
-This tool has a handicap for interfaces. `Reorder()` extension must be called manually in `OnValidate()` for auto serialization based on enum length
-
-<img src="/.github/screenshots/Interface.png"/>
-
-```c
-public class ExampleImplementation : EnumDictionary.StringIntDict, EnumDictionaryCustom.IStringColorDict,
-EnumDictionaryCustom.IStringTransformDict, EnumDictionaryCustom.IDirectionAudioDict
-{
-    [SerializeField] protected List<EnumDictionaryBase<States, string, Color>> m_ESC_D;
-    public List<EnumDictionaryBase<States, string, Color>> ESC_D => m_ESC_D;
-
-    [SerializeField] protected List<EnumDictionaryBase<States, string, Transform>> m_EST_D;
-    public List<EnumDictionaryBase<States, string, Transform>> EST_D => m_EST_D;
-
-    [SerializeField] protected List<EnumDictionaryBase<States, Direction, AudioClip>> m_EEA_D;
-    public List<EnumDictionaryBase<States, Direction, AudioClip>> EEA_D => m_EEA_D;
-
-    void Start()
-    {
-        Debug.Log(_T1.GetValues(States.State2).Value1);
-    }
-
-    public override void OnValidate()
-    {
-        base.OnValidate();
-        m_ESC_D.ReOrder();
-        m_EST_D.ReOrder();
-        EEA_D.ReOrder();
-    }
-}
-```
-
+--------------------------------------------------------------------------------------------------------
+|Output|
+|---|
+|<img src="/.github/screenshots/ExampleEditor.png">|
