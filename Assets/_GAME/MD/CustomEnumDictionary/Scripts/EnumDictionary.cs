@@ -34,7 +34,7 @@ namespace MD.EnumDictionary
 
             for (int i = 0; i < EnumLenght(); i++)
             {
-                D1.Add(new EnumDictionaryBase<T, T1, T2>(key, val1, val2));
+                D1.Add(new EnumDictionaryBase<T, T1, T2>());
                 SetterUp(i);
             }
         }
@@ -47,9 +47,9 @@ namespace MD.EnumDictionary
             while (D1.Count != EnumLenght())
             {
                 if (D1.Count > EnumLenght())
-                    D1.RemoveAt(EnumLenght() - 1);
+                    D1.RemoveAt(EnumLenght());
                 else if (D1.Count < EnumLenght())
-                    D1.Add(new EnumDictionaryBase<T, T1, T2>(key, val1, val2));
+                    D1.Add(new EnumDictionaryBase<T, T1, T2>());
             }
             for (int i = 0; i < D1.Count; i++)
             {

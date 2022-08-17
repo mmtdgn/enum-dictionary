@@ -18,6 +18,12 @@ namespace MD.EnumDictionary
         public Tval2 val2;
         public bool IsEnumFieldEditable;
 
+
+        /// <summary>
+        /// empty Constructor<br></br><br></br>
+        /// </summary>
+        public EnumDictionaryBase() { }
+
         /// <summary>
         /// Constructor for dictionary element, defines key and values.<br></br><br></br>
         /// </summary>

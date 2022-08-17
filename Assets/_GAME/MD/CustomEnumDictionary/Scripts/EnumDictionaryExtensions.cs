@@ -67,9 +67,15 @@ namespace MD.EnumDictionary.Extensions
                         _T1.RemoveAt(EnumLenght() - 1);
                     else if (_T1.Count < EnumLenght())
                         _T1.Add(new EnumDictionaryBase<T, T1, T2>
-                        (_T1[0].key, _T1[0].val1, _T1[0].val2));
-                }
+                        {
+                            key = _T1[0].key,
+                            val1 = _T1[0].val1,
+                            val2 = _T1[0].val2,
+                            name = " "
+                        });
 
+                }
+                //                        (_T1[0].key, _T1[0].val1, _T1[0].val2));
                 for (int i = 0; i < EnumLenght(); i++)
                 {
                     _T1[i].key = (T)(object)i;
