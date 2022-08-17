@@ -76,7 +76,7 @@ This is a custom inspector. So for use this inspector, declare your class at `Cu
 
 |public enum States { State1, State2, State3, State4 };|public enum States { State1, State2, State3, State4, State5 };|
 |:---:|:---:|
-| <img src="/.github/screenshots/I2.png">  |  <img src="/.github/screenshots/I4.png"> |
+| <img src="/.github/screenshots/I3.png">  |  <img src="/.github/screenshots/I4.png"> |
 
 -------------------------------------------------------------------------------------------------------------------
 
